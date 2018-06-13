@@ -1,0 +1,8 @@
+FROM node:alpine as builder
+WORKDIR /snaas-ui-react
+COPY . /snaas-ui-react
+RUN npm install && \
+    npm run build
+
+FROM nginx:alpine
+COPY --from=builder  /snaas-ui-react/build /usr/share/nginx/html
