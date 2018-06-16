@@ -1,4 +1,7 @@
-FROM node:alpine-latest
+FROM node:alpine
 WORKDIR /snaas-ui-react
+COPY . /snaas-ui-react
+RUN npm install
+
 VOLUME /snaas-ui-react
 CMD npm start
