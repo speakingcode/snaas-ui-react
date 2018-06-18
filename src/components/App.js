@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+
+import { Menu } from './Menu.js'
 import logo from './logo.png';
 import './App.css';
+
+
 
 class App extends Component {
   render() {
@@ -10,9 +14,15 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Snoop as a Service</h1>
         </header>
-        <p className="App-intro">
+        <div className="menu-container">
+          <Menu />
+        </div>
+        <div>
+          body<br/>
 
-        </p>
+            body2
+        </div>
+
       </div>
     );
   }

@@ -9,7 +9,7 @@ import { createStore }        from 'redux'
 import { Provider }           from 'react-redux'
 
 import './index.css';
-import App                    from './App';
+import App                    from './components/App';
 
 import registerServiceWorker  from './registerServiceWorker';
 
