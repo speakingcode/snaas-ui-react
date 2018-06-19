@@ -7,11 +7,14 @@
   padding-bottom: 10px;
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 60px
+  border-radius: 60px;
+  text-align: center;
 }
 
-.Menu-left{
-  float: left;
+.Menu-item{
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .Menu a {

@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { Route }            from 'react-router-dom'
 
-import { Menu } from './Menu.js'
-import logo from './logo.png';
-import './App.css';
+import { Menu }             from './Menu.js'
+import logo                 from './logo.png'
+
+import './App.css'
 
 
 
@@ -14,13 +16,15 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Snoop as a Service</h1>
         </header>
-        <div className="menu-container">
+        <div className="App-menu-container">
           <Menu />
         </div>
-        <div>
-          body<br/>
-
-            body2
+        <div className="App-section-container">
+          <Route exact path='/' component={() => "Home"} />
+          <Route path="/discography" component={()=>"Discography"} />
+          <Route path="/nicknames" component={()=>"Nicknames"} />
+          <Route path="/doggpound" component={()=>"Doggpound"} />
+          <Route path="/api-docs" component={()=>"API Docs"} />
         </div>
 
       </div>
