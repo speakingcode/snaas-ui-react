@@ -11,14 +11,14 @@
 
 .App-header {
   background-color: #3b004d;
-  height: 150px;
+  height: 230px;
   padding: 20px;
   color: #d3d1d7;
-  border-radius: 90px;
+  border-radius: 140px;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
 .App-intro {
@@ -29,8 +29,6 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
-
 
 .App-menu-container {
   width: 100%;
@@ -44,4 +42,15 @@
   border-width: 3px;
   border-style: solid;
   border-radius: 90px;
+}
+
+.App-footer {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 10px 2px 10px;
+  color: #d3d1d7;
+  border-color: #7b7b7b;
+  border-radius: 20px 20px 0px 0px;
+  border-width: 2px 2px 0px 2px;
+  border-style: solid;
 }

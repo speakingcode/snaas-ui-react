@@ -1,0 +1,85 @@
+.Discography {
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.Album {
+  background-color: #000000;
+  color: #d3d1d7;
+  border-color: #76298d;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 50px;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.Album-title-section {
+  text-align: center;
+  float: left;
+  width: 20%;
+}
+
+.Album-title {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.Album-artwork img {
+  width: 100%;
+  margin-top: 7px;
+  border-color: #7b7b7b;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.Album-info-section {
+  float: left;
+  padding-left: 26px;
+  padding-right: 20px;
+  padding-top: 30px;
+}
+
+.Album-info {
+  border-collapse: collapse;
+}
+
+.Album-info th, .Album-info td {
+  padding: 3px;
+}
+  
+.Album-info th {
+  vertical-align: top;
+  text-align: center;
+  background-color: #3b004d;
+  border: 1px solid black;
+}
+
+.Album-info td {
+  vertical-align: top;
+  border: 1px solid black;
+}
+
+.Album-info tr {
+  background-color: #7b7b7b;
+}
+
+.Album-info tr:hover {
+  background-color: #76298d;
+}
+.Album-info ul {
+  margin-top: 0px;
+}
+
+.Album-info-chart-position {
+  text-align: center;
+}
+
+.peak-chart {
+}

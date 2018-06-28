@@ -1,28 +1,23 @@
 import React from 'react'
 
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import './Menu.css'
+
+const MenuLink = ({to, children, ...props}) => (
+    <div className="Menu-item">
+      <NavLink to={to} activeClassName="Menu-NavLink-active" {...props}>{ children }</NavLink>
+    </div>
+)
 
 const Menu = () => (
   <div className="Menu">
 
-    <div className="Menu-item">
-      <Link to="/">Home</Link>
-    </div>
-    <div className="Menu-item">
-      <Link to="/discography">Discography</Link>
-    </div>
-    <div className="Menu-item">
-      <Link to="/nicknames">Nicknames</Link>
-    </div>
-    <div className="Menu-item">
-      <Link to="/doggpound">Doggpound</Link>
-    </div>
-
-    <div className="Menu-item">
-      <Link to="/api-docs">APIzzle</Link>
-    </div>
+      <MenuLink to="/" exact={true}>Home</MenuLink>
+      <MenuLink to="/discography">Discography</MenuLink>
+      <MenuLink to="/nicknames">Nicknames</MenuLink>
+      <MenuLink to="/doggpound">Doggpound</MenuLink>
+      <MenuLink to="/api-docs">APIzzle</MenuLink>
   </div>
 )
 
