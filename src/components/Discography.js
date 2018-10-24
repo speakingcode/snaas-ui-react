@@ -10,12 +10,19 @@ class Discography extends Component {
     this.state = {
       albums: []
     }
+  }
 
+  componentWillMount() {
     this.fetchDiscog()
   }
 
   fetchDiscog() {
-    fetch('http://snaas-api.herokuapp.com/api/v1/albums')
+    //fetch('http://snaas-api.herokuapp.com/api/v1/albums')
+    fetch('http://localhost:3001/api/v1/albums', {
+      headers: new Headers({
+        "Authorization": "Token 8QCjoYxO7VJvPVPoT2RbJwtt"
+      })
+    })
       .then(resp => resp.json())
       .then(albums =>  {
         console.log(albums)
@@ -25,7 +32,8 @@ class Discography extends Component {
   }
 
   render() {
-    return (
+    return this.state.albums.length === 0 ? "Loading..." :
+    (
       <div className="Discography">
         {this.state.albums.map(album => {
           let charts = album.peak_chart_positions.reduce((map, chartPos) => {
