@@ -1,7 +1,8 @@
 FROM node:alpine
 WORKDIR /snaas-ui-react
-COPY . /snaas-ui-react
+COPY package.json package-lock.json /snaas-ui-react/
 RUN npm install
+COPY . /snaas-ui-react/
 
 VOLUME /snaas-ui-react
 CMD npm start
