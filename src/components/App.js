@@ -1,43 +1,64 @@
-import React, { Component } from 'react'
-import { Route }            from 'react-router-dom'
+import React, { useState }  from 'react'
+import {
+  Switch,
+  Route
+}                           from 'react-router-dom'
 
-import { Menu }             from './Menu.js'
-import { Discography }      from './Discography.js'
+import { Menu }             from './Menu'
+import { Home }             from './Home'
+import { Discography }      from './Discography'
+import { PageNotFound }     from './PageNotFound'
 import logo                 from './logo.png'
 
 import './App.css'
 
 
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">(¯`·.¸¸.- °º  º° -.¸¸.·´¯)</h1>
-          <h1 className="App-title">°·.¸.·°¯°·.¸.·°¯°·.¸.- $иσσρ αѕ α $єяνι¢є -.¸.·°¯°·.¸.·°¯°·.¸.·°</h1>
-          <h1 className="App-title">•._.••´¯``•.¸¸.•`  `•.¸¸.•´´¯`••._.•</h1>
-        </header>
+const App = () => {
+  const [loginModalOpen, setLoginModal] = useState(false)
 
-        <div className="App-menu-container">
-          <Menu />
-        </div>
+  const toggleLoginModal = () => {
+    setLoginModal(!loginModalOpen)
+  }
 
-        <div className="App-section-container">
-          <Route exact path='/' component={() => "Home"} />
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1 className="App-title">(¯`·.¸¸.- °º  º° -.¸¸.·´¯)</h1>
+        <h1 className="App-title">°·.¸.·°¯°·.¸.·°¯°·.¸.- $иσσρ αѕ α $єяνι¢є -.¸.·°¯°·.¸.·°¯°·.¸.·°</h1>
+        <h1 className="App-title">•._.••´¯``•.¸¸.•`  `•.¸¸.•´´¯`••._.•</h1>
+      </header>
+
+      <div className="App-menu-container">
+        <Menu
+          isSignedIn={false}
+          onSignInClick={
+            () => {
+              toggleLoginModal()
+            }
+          }
+        />
+      </div>
+
+      <div className="App-section-container">
+        <Switch>
+          <Route exact path='/' component={Home} />
           <Route path="/discography" component={Discography} />
           <Route path="/nicknames" component={()=>"Nicknames"} />
           <Route path="/doggpound" component={()=>"Doggpound"} />
           <Route path="/api-docs" component={()=>"API Docs"} />
-        </div>
-
-        <div className="App-footer">
-          CC-SA-BY | http://speakingcode.com | github.com/speakingcode
-        </div>
+          <Route path="*">
+            <PageNotFound />
+          </Route>
+        </Switch>
       </div>
-    );
-  }
+
+      <div className="App-footer">
+        CC-SA-BY | http://speakingcode.com | github.com/speakingcode
+      </div>
+    </div>
+  );
 }
 
 export default App;

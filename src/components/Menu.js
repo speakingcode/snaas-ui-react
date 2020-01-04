@@ -10,7 +10,7 @@ const MenuLink = ({to, children, ...props}) => (
     </div>
 )
 
-const Menu = () => (
+const Menu = ({isLoggedIn, onSignInClick}) => (
   <div className="Menu">
 
       <MenuLink to="/" exact={true}>Home</MenuLink>
@@ -18,6 +18,9 @@ const Menu = () => (
       <MenuLink to="/nicknames">Nicknames</MenuLink>
       <MenuLink to="/doggpound">Doggpound</MenuLink>
       <MenuLink to="/api-docs">APIzzle</MenuLink>
+      { !isLoggedIn &&
+        <a href="#" onClick={()=>{onSignInClick()}}>Sign In/Register</a>
+      }
   </div>
 )
 
