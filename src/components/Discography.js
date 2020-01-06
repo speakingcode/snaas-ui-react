@@ -20,7 +20,7 @@ class Discography extends Component {
     //fetch('http://snaas-api.herokuapp.com/api/v1/albums')
     fetch('http://localhost:3001/api/v1/albums', {
       headers: new Headers({
-        "X-Api-Key": "FBBfW6eGVkrvc44Iwpso8gtt"
+        "X-Api-Key": process.env.REACT_APP_SNAAS_API_KEY
       })
     })
       .then(resp => resp.json())
