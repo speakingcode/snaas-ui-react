@@ -8,6 +8,9 @@ import App                  from './App'
 
 import { Home }             from './Home'
 import { Discography }      from './Discography'
+import { Nicknames }        from './Nicknames'
+import { DoggPound }        from './DoggPound'
+import { ApiDocs }          from './ApiDocs'
 import { Menu }             from './Menu'
 import { PageNotFound }     from './PageNotFound'
 
@@ -59,13 +62,13 @@ describe('App', ()=> {
       expect(wrapper.find(Nicknames)).toHaveLength(1)
     })
 
-    it('shows Doggpound when path is /doggpound', () => {
+    it('shows DoggPound when path is /doggpound', () => {
       const wrapper = mount(
         <MemoryRouter initialEntries={[ '/doggpound' ]}>
           <App/>
         </MemoryRouter>
       )
-      expect(wrapper.find(Doggpound)).toHaveLength(1)
+      expect(wrapper.find(DoggPound)).toHaveLength(1)
     })
 
     it('shows ApiDocs when path is /api-docs', () => {
