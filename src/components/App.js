@@ -10,6 +10,7 @@ import { Discography }      from './Discography'
 import { Nicknames }        from './Nicknames'
 import { DoggPound }        from './DoggPound'
 import { ApiDocs }          from './ApiDocs'
+import { Apps }             from './Apps'
 import { PageNotFound }     from './PageNotFound'
 import logo                 from './logo.png'
 
@@ -48,9 +49,10 @@ const App = () => {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path="/discography" component={Discography} />
-          <Route path="/nicknames" component={Nicknames} />
-          <Route path="/doggpound" component={DoggPound} />
-          <Route path="/api-docs" component={ApiDocs} />
+          <Route path="/nicknames"   component={Nicknames}   />
+          <Route path="/doggpound"   component={DoggPound}   />
+          <Route path="/api-docs"    component={ApiDocs}     />
+          <Route path="/apps"        component={Apps}        />
           <Route path="*">
             <PageNotFound />
           </Route>

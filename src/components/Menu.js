@@ -12,15 +12,18 @@ const MenuLink = ({to, children, ...props}) => (
 
 const Menu = ({isLoggedIn, onSignInClick}) => (
   <div className="Menu">
-
-      <MenuLink to="/" exact={true}>Home</MenuLink>
-      <MenuLink to="/discography">Discography</MenuLink>
-      <MenuLink to="/nicknames">Nicknames</MenuLink>
-      <MenuLink to="/doggpound">Doggpound</MenuLink>
-      <MenuLink to="/api-docs">APIzzle</MenuLink>
-      { !isLoggedIn &&
-        <a href="#" onClick={()=>{onSignInClick()}}>Sign In/Register</a>
-      }
+    <MenuLink to="/" exact={true}>Home</MenuLink>
+    <MenuLink to="/discography">Discography</MenuLink>
+    <MenuLink to="/nicknames">Nicknames</MenuLink>
+    <MenuLink to="/doggpound">Doggpound</MenuLink>
+    <MenuLink to="/api-docs">APIzzle</MenuLink>
+    {
+      isLoggedIn &&
+      <MenuLink to="/apps">Manage Apps</MenuLink>
+    }
+    { !isLoggedIn &&
+      <a href="#" onClick={()=>{onSignInClick()}}>Sign In/Register</a>
+    }
   </div>
 )
 

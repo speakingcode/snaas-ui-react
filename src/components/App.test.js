@@ -11,6 +11,7 @@ import { Discography }      from './Discography'
 import { Nicknames }        from './Nicknames'
 import { DoggPound }        from './DoggPound'
 import { ApiDocs }          from './ApiDocs'
+import { Apps }             from './Apps'
 import { Menu }             from './Menu'
 import { PageNotFound }     from './PageNotFound'
 
@@ -78,6 +79,15 @@ describe('App', ()=> {
         </MemoryRouter>
       )
       expect(wrapper.find(ApiDocs)).toHaveLength(1)
+    })
+
+    it('shows Apps when path is /apps', () => {
+      const wrapper = mount(
+        <MemoryRouter initialEntries={[ '/apps' ]}>
+          <Apps/>
+        </MemoryRouter>
+      )
+      expect(wrapper.find(Apps)).toHaveLength(1)
     })
 
     it('shows PageNotFound when path is unknown', () => {
